@@ -11,22 +11,22 @@ tags: [js, 算法, 二分查找, 变体, 查找近似值]
 
 >```javascript
 >function searchFirst(arr, value) {
->&nbsp;&nbsp;let low = 0
->&nbsp;&nbsp;let high = arr.length - 1
->&nbsp;&nbsp;let n = high
->&nbsp;&nbsp;while (low <= high) {
->&nbsp;&nbsp;let mid = low + ((high - low) >> 1)
->&nbsp;&nbsp;if (arr[mid] >= value) {
->&nbsp;&nbsp;&nbsp;&nbsp;high = mid - 1
->&nbsp;&nbsp;} else {
->&nbsp;&nbsp;&nbsp;&nbsp;low = mid + 1
->&nbsp;&nbsp;}
->&nbsp;&nbsp;}
->&nbsp;&nbsp;if (low < n && arr[low] >= value) { // 如果查找精确值，则使用 arr[low] == value 判断
->&nbsp;&nbsp;&nbsp;&nbsp;return low
->&nbsp;&nbsp;} else {
->&nbsp;&nbsp;&nbsp;&nbsp;return -1
->&nbsp;&nbsp;}
+>  let low = 0
+>  let high = arr.length - 1
+>  let n = high
+>  while (low <= high) {
+>  let mid = low + ((high - low) >> 1)
+>  if (arr[mid] >= value) {
+>    high = mid - 1
+>  } else {
+>    low = mid + 1
+>  }
+>  }
+>  if (low < n && arr[low] >= value) { // 如果查找精确值，则使用 arr[low] == value 判断
+>    return low
+>  } else {
+>    return -1
+>  }
 >}
 >```
 
@@ -34,21 +34,21 @@ tags: [js, 算法, 二分查找, 变体, 查找近似值]
 
 >```javascript
 >function searchLast(arr, value) {
->&nbsp;&nbsp;let low = 0
->&nbsp;&nbsp;let high = arr.length - 1
->&nbsp;&nbsp;while (low <= high) {
->&nbsp;&nbsp;&nbsp;&nbsp;let mid = low + ((high - low) >> 1)
->&nbsp;&nbsp;&nbsp;&nbsp;if (arr[mid] <= value) {
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;low = mid + 1
->&nbsp;&nbsp;&nbsp;&nbsp;} else {
->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;high = mid - 1
->&nbsp;&nbsp;&nbsp;&nbsp;}
->&nbsp;&nbsp;}
->&nbsp;&nbsp;if (high >= 0 && arr[high] <= value) { // 如果查找精确值，则使用 arr[low] == value 判断
->&nbsp;&nbsp;&nbsp;&nbsp;return high
->&nbsp;&nbsp;} else {
->&nbsp;&nbsp;&nbsp;&nbsp;return -1
->&nbsp;&nbsp;}
+>  let low = 0
+>  let high = arr.length - 1
+>  while (low <= high) {
+>    let mid = low + ((high - low) >> 1)
+>    if (arr[mid] <= value) {
+>      low = mid + 1
+>    } else {
+>      high = mid - 1
+>    }
+>  }
+>  if (high >= 0 && arr[high] <= value) { // 如果查找精确值，则使用 arr[low] == value 判断
+>    return high
+>  } else {
+>    return -1
+>  }
 >}
 >```
 

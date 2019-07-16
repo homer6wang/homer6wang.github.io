@@ -7,6 +7,7 @@ tags: [js, 算法, 插入排序]
 
 js 实现插入排序
 
+>```javascript
 > function insertionSort (arr) {
 >   const n = arr.length
 >   if (n <= 1) return
@@ -24,6 +25,7 @@ js 实现插入排序
 >     arr[j] = value
 >   }
 > }
+>```
 
 稳定的原地排序
 

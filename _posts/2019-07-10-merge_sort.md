@@ -7,31 +7,33 @@ tags: [js, 算法, 排序, 归并]
 
 js 实现归并排序
 
+>```javascript
 > function mergeSort (arr, compareFn) {
-> &nbsp;&nbsp;const {length} = arr
-> &nbsp;&nbsp;if (length > 1) {
-> &nbsp;&nbsp;&nbsp;&nbsp;let middle = Math.ceil(length / 2)
-> &nbsp;&nbsp;&nbsp;&nbsp;let left = mergeSort(arr.slice(0, middle), compareFn)
-> &nbsp;&nbsp;&nbsp;&nbsp;let right = mergeSort(arr.slice(middle), compareFn)
-> &nbsp;&nbsp;&nbsp;&nbsp;arr = merge(left, right, compareFn)
-> &nbsp;&nbsp;}
-> &nbsp;&nbsp;return arr
+>   const {length} = arr
+>   if (length > 1) {
+>     let middle = Math.ceil(length / 2)
+>     let left = mergeSort(arr.slice(0, middle), compareFn)
+>     let right = mergeSort(arr.slice(middle), compareFn)
+>     arr = merge(left, right, compareFn)
+>   }
+>   return arr
 > }
-
+>
 > function merge (left, right, compareFn) {
-> &nbsp;&nbsp;let i = 0
-> &nbsp;&nbsp;let j = 0
-> &nbsp;&nbsp;let res = []
-> &nbsp;&nbsp;while(i < left.length && j < right.length) {
-> &nbsp;&nbsp;&nbsp;&nbsp;res.push(compareFn(left[i], right[j]) ? left[i++] : right[j++])
-> &nbsp;&nbsp;}
-> &nbsp;&nbsp;return res.concat(i < left.length ? left.slice(i) : right.slice(j))
+>   let i = 0
+>   let j = 0
+>   let res = []
+>   while(i < left.length && j < right.length) {
+>     res.push(compareFn(left[i], right[j]) ? left[i++] : right[j++])
+>   }
+>   return res.concat(i < left.length ? left.slice(i) : right.slice(j))
 > }
-
+>
 > function compareFn (a, b) {
-> &nbsp;&nbsp;if(a < b) {return 1}
-> &nbsp;&nbsp;return 0
+>   if(a < b) {return 1}
+>   return 0
 > }
+>```
 
 时间复杂度稳定为O(nlogn)
 
